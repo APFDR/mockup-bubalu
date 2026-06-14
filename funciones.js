@@ -42,6 +42,162 @@ const garmentPreviewMap = {
   polo_sc: 'img/poleron-polo-base.png',
 };
 
+const productCatalog = {
+  'polo-basico': {
+    slug: 'polo-basico',
+    name: 'Polo Básico',
+    price: 4000,
+    category: 'polo',
+    emoji: '👕',
+    image: 'img/polera-basica-base2.png',
+    badge: 'Más vendido',
+    label: 'Polo Básico 160g',
+    gram: '160 gramos · 100% algodón',
+    delivery: 'Llega en 3–5 días hábiles',
+    bulk: 'Desde 6 unid: $3.500 c/u',
+    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    description: 'Prenda base versátil para marca, uniformes y reventa. Corte clásico, buena caída y soporte para estampado DTF.',
+    features: ['Algodón 100%', '160 gramos', 'Ideal para DTF', 'Uso diario'],
+    colors: [
+      { id: 'blanco', name: 'Blanco', hex: '#ffffff', filter: 'none' },
+      { id: 'negro', name: 'Negro', hex: '#1a1a1a', filter: 'brightness(0)' },
+      { id: 'rojo', name: 'Rojo', hex: '#d32f2f', filter: 'sepia(1) saturate(5) hue-rotate(320deg)' },
+      { id: 'azul', name: 'Azul', hex: '#1a237e', filter: 'sepia(1) saturate(3) hue-rotate(200deg)' },
+      { id: 'amarillo', name: 'Amarillo', hex: '#f9c23c', filter: 'sepia(1) saturate(5) hue-rotate(20deg)' },
+      { id: 'verde', name: 'Verde', hex: '#2e7d32', filter: 'sepia(1) saturate(3) hue-rotate(90deg)' },
+    ],
+    summary: 'Base confiable para poleras de marca y pedidos al por mayor.'
+  },
+  'polo-oversize': {
+    slug: 'polo-oversize',
+    name: 'Polo Oversize',
+    price: 9000,
+    category: 'polo',
+    emoji: '👕',
+    image: 'img/polo-oversize.png',
+    badge: 'Tendencia',
+    label: 'Polo Oversize 250g',
+    gram: '250 gramos · Algodón premium',
+    delivery: 'Llega en 3–5 días hábiles',
+    bulk: 'Desde 3 unid: $8.000 c/u',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Fit amplio con presencia visual fuerte. Pensado para marcas streetwear y drops con mayor gramaje.',
+    features: ['Algodón premium', '250 gramos', 'Fit oversize', 'Acabado resistente'],
+    colors: [
+      { id: 'blanco', name: 'Blanco', hex: '#ffffff', filter: 'none' },
+      { id: 'negro', name: 'Negro', hex: '#1a1a1a', filter: 'brightness(0)' },
+      { id: 'rojo', name: 'Rojo', hex: '#d32f2f', filter: 'sepia(1) saturate(5) hue-rotate(320deg)' },
+      { id: 'gris', name: 'Gris', hex: '#888888', filter: 'grayscale(1) brightness(0.8)' },
+    ],
+    summary: 'Fit amplio y gramaje alto para un look más premium.'
+  },
+  'polo-acidwash': {
+    slug: 'polo-acidwash',
+    name: 'Polo Acid Wash',
+    price: 5000,
+    category: 'polo',
+    emoji: '👕',
+    image: 'img/polo-acidwash.png',
+    badge: 'Exclusivo',
+    label: 'Polo Acid Wash 180g',
+    gram: '180 gramos · Efecto desteñido',
+    delivery: 'Llega en 3–5 días hábiles',
+    bulk: 'Desde 3 unid: $4.500 c/u',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Efecto lavado con textura visual única. Funciona muy bien para colecciones limitadas y estilo urbano.',
+    features: ['Efecto acid wash', '180 gramos', 'Edición diferenciada', 'Look vintage'],
+    colors: [
+      { id: 'nube', name: 'Humo', hex: '#c9c9c9', filter: 'brightness(1.05) contrast(1.1) saturate(0.7)' },
+      { id: 'azul', name: 'Azul', hex: '#5a7fb5', filter: 'sepia(1) saturate(3) hue-rotate(200deg)' },
+      { id: 'rojo', name: 'Rojo', hex: '#b05050', filter: 'sepia(1) saturate(4) hue-rotate(320deg)' },
+    ],
+    summary: 'La opción con más carácter visual del catálogo.'
+  },
+  'canguro-nacional': {
+    slug: 'canguro-nacional',
+    name: 'Canguro Nacional',
+    price: 9000,
+    category: 'poleron',
+    emoji: '🧥',
+    image: 'img/poleron-canguro.png',
+    badge: 'Abrigo',
+    label: 'Canguro Nacional 320g',
+    gram: '320 gramos · Polar interior',
+    delivery: 'Llega en 3–5 días hábiles',
+    bulk: 'Desde 6 unid: $8.500 c/u',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Polerón con interior suave y gran estructura para climas fríos, merchandising y uniformes corporativos.',
+    features: ['Polar interior', '320 gramos', 'Capucha con cordón', 'Bolsillo frontal'],
+    colors: [
+      { id: 'blanco', name: 'Blanco', hex: '#ffffff', filter: 'none' },
+      { id: 'negro', name: 'Negro', hex: '#1a1a1a', filter: 'brightness(0)' },
+      { id: 'gris', name: 'Gris', hex: '#888888', filter: 'grayscale(1) brightness(0.75)' },
+      { id: 'burdeo', name: 'Burdeo', hex: '#800020', filter: 'sepia(1) saturate(4) hue-rotate(295deg)' },
+      { id: 'azul', name: 'Azul', hex: '#1a237e', filter: 'sepia(1) saturate(3) hue-rotate(200deg)' },
+    ],
+    summary: 'Ideal para temporadas frías y pedidos corporativos.'
+  },
+  'polo-sin-capucha': {
+    slug: 'polo-sin-capucha',
+    name: 'Polo Nacional (Sin Capucha)',
+    price: 8000,
+    category: 'poleron',
+    emoji: '🧥',
+    image: 'img/poleron-polo.png',
+    badge: 'Básico',
+    label: 'Polo s/Capucha 320g',
+    gram: '320 gramos · Algodón polar',
+    delivery: 'Llega en 3–5 días hábiles',
+    bulk: 'Desde 6 unid: $7.500 c/u',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Polerón limpio y robusto, sin capucha, con caída recta y gran comodidad para uniformes o marca.',
+    features: ['Algodón polar', '320 gramos', 'Sin capucha', 'Versátil para marca'],
+    colors: [
+      { id: 'blanco', name: 'Blanco', hex: '#ffffff', filter: 'none' },
+      { id: 'negro', name: 'Negro', hex: '#1a1a1a', filter: 'brightness(0)' },
+      { id: 'gris', name: 'Gris', hex: '#888888', filter: 'grayscale(1) brightness(0.75)' },
+      { id: 'azul', name: 'Azul', hex: '#1a237e', filter: 'sepia(1) saturate(3) hue-rotate(200deg)' },
+    ],
+    summary: 'La base más limpia para personalización de invierno.'
+  },
+  'impresion-dtf': {
+    slug: 'impresion-dtf',
+    name: 'Impresión DTF Textil',
+    price: 12000,
+    category: 'dtf',
+    emoji: '🖨️',
+    image: 'img/dtf-print.webp',
+    badge: 'Producción',
+    label: 'Impresión Textil DTF',
+    gram: 'Metro de 58cm · Full color',
+    delivery: 'Producción: 2–3 días hábiles',
+    bulk: '10mts: $10.000 · 20mts: $8.000',
+    sizes: [],
+    description: 'Servicio de impresión DTF con nitidez alta y resistencia para producción de prendas personalizadas.',
+    features: ['Full color', '58cm de ancho', 'Alta durabilidad', 'Listo para transferir'],
+    colors: [],
+    summary: 'Servicio ideal para producción de estampados textiles.'
+  },
+  'impresion-uv': {
+    slug: 'impresion-uv',
+    name: 'Impresión UV',
+    price: 30000,
+    category: 'dtf',
+    emoji: '✨',
+    image: 'img/dtf-uv.png',
+    badge: 'Premium',
+    label: 'Impresión UV Premium',
+    gram: 'Metro de 58cm · Alta definición',
+    delivery: 'Producción: 2–3 días hábiles',
+    bulk: '10mts: $25.000 · 20mts: $20.000',
+    sizes: [],
+    description: 'Terminación con brillo y relieve táctil, pensada para marcas, etiquetas y piezas premium.',
+    features: ['Brillo UV', 'Relieve táctil', 'Alta definición', 'Uso premium'],
+    colors: [],
+    summary: 'Acabado premium para piezas que deben destacar.'
+  }
+};
+
 let selectedDesignElement = null;
 
 function escapeHTML(value) {
@@ -196,6 +352,140 @@ function deleteSelectedDesignElement() {
 
 function byId(id) {
   return document.getElementById(id);
+}
+
+function getProductBySlug(slug) {
+  return productCatalog[slug] || null;
+}
+
+function openProductDetail(slug) {
+  window.location.href = 'producto.html?product=' + encodeURIComponent(slug);
+}
+
+function applyPreviewFilter(imageEl, color, previewLabelEl, activeSwatchEl) {
+  if (!imageEl || !color) return;
+  imageEl.style.filter = color.filter || 'none';
+  imageEl.dataset.selectedColor = color.name;
+  if (previewLabelEl) previewLabelEl.textContent = color.name;
+  if (activeSwatchEl) {
+    const wrap = activeSwatchEl.parentElement;
+    if (wrap) {
+      wrap.querySelectorAll('.swatch').forEach(swatch => swatch.classList.remove('active'));
+    }
+    activeSwatchEl.classList.add('active');
+  }
+}
+
+function setProductPreview(slug, colorId, swatchEl) {
+  const product = getProductBySlug(slug);
+  if (!product || !product.colors || !product.colors.length) return;
+  const color = product.colors.find(item => item.id === colorId) || product.colors[0];
+  const card = swatchEl ? swatchEl.closest('.product-card') : document.querySelector(`[data-product="${slug}"]`);
+  if (!card) return;
+  const imageEl = card.querySelector('.product-card-image');
+  const labelEl = card.querySelector('.product-preview-label');
+  applyPreviewFilter(imageEl, color, labelEl, swatchEl || card.querySelector('.swatch'));
+}
+
+function initCatalogPreviews() {
+  document.querySelectorAll('.product-card[data-product]').forEach(card => {
+    const slug = card.dataset.product;
+    const product = getProductBySlug(slug);
+    if (!product || !product.colors || !product.colors.length) return;
+    const swatches = card.querySelectorAll('.swatch');
+    swatches.forEach(swatch => {
+      swatch.addEventListener('click', event => {
+        event.stopPropagation();
+        setProductPreview(slug, swatch.dataset.color, swatch);
+      });
+    });
+    setProductPreview(slug, product.colors[0].id, swatches[0]);
+  });
+}
+
+function renderProductDetail() {
+  const root = byId('product-detail-root');
+  if (!root) return;
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('product') || 'polo-basico';
+  const product = getProductBySlug(slug) || getProductBySlug('polo-basico');
+  if (!product) return;
+
+  const isCatalogProduct = product.category === 'polo' || product.category === 'poleron';
+  const sizesHtml = isCatalogProduct && product.sizes.length
+    ? `<div class="detail-section"><div class="detail-label">Tallas disponibles</div><div class="detail-chip-row">${product.sizes.map(size => `<span class="detail-chip">${size}</span>`).join('')}</div></div>`
+    : '';
+  const colorsHtml = product.colors && product.colors.length
+    ? `<div class="detail-section"><div class="detail-label">Colores disponibles</div><div class="detail-color-grid">${product.colors.map((color, index) => `<button type="button" class="detail-swatch${index === 0 ? ' active' : ''}" style="background:${color.hex};" data-color="${color.id}" aria-label="${color.name}"><span class="detail-swatch-tooltip">${color.name}</span></button>`).join('')}</div></div>`
+    : '';
+  const featuresHtml = product.features.length
+    ? `<ul class="detail-feature-list">${product.features.map(feature => `<li>${feature}</li>`).join('')}</ul>`
+    : '';
+
+  root.innerHTML = `
+    <div class="detail-shell">
+      <a class="detail-back-link" href="tienda.html">← Volver al catálogo</a>
+      <div class="detail-layout">
+        <section class="detail-gallery">
+          <div class="detail-badge">${escapeHTML(product.badge)}</div>
+          <div class="detail-preview">
+            <img class="detail-product-image" src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}">
+            <div class="detail-preview-label">${escapeHTML(product.label)}</div>
+          </div>
+          <div class="detail-spec-strip">
+            <div><span>Precio base</span><strong>$${product.price.toLocaleString('es-CL')}</strong></div>
+            <div><span>${escapeHTML(product.gram)}</span><strong>${product.category === 'dtf' ? 'Servicio' : 'Prenda'}</strong></div>
+          </div>
+          ${colorsHtml}
+        </section>
+
+        <section class="detail-info">
+          <span class="detail-eyebrow">${product.category === 'dtf' ? 'Servicio profesional' : 'Prenda destacada'}</span>
+          <h1>${escapeHTML(product.name)}</h1>
+          <p class="detail-summary">${escapeHTML(product.summary)}</p>
+          <p class="detail-copy">${escapeHTML(product.description)}</p>
+
+          <div class="detail-price-card">
+            <div>
+              <span class="detail-label">Precio</span>
+              <strong>$${product.price.toLocaleString('es-CL')}</strong>
+            </div>
+            <div>
+              <span class="detail-label">Despacho</span>
+              <strong>${escapeHTML(product.delivery)}</strong>
+            </div>
+            <div>
+              <span class="detail-label">Mayoristas</span>
+              <strong>${escapeHTML(product.bulk)}</strong>
+            </div>
+          </div>
+
+          ${featuresHtml}
+          ${sizesHtml}
+
+          <div class="detail-actions">
+            <button class="btn-add-cart" type="button" onclick="addToCart('${escapeHTML(product.name)}', ${product.price}, '${product.emoji}')">+ Agregar al Carrito</button>
+            ${isCatalogProduct ? `<a class="btn-outline detail-design-link" href="personalizador.html">Personalizar ahora</a>` : ''}
+          </div>
+        </section>
+      </div>
+    </div>
+  `;
+
+  const detailImage = root.querySelector('.detail-product-image');
+  const detailLabel = root.querySelector('.detail-preview-label');
+  const swatches = root.querySelectorAll('.detail-swatch');
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      swatches.forEach(item => item.classList.remove('active'));
+      swatch.classList.add('active');
+      const color = product.colors.find(item => item.id === swatch.dataset.color) || product.colors[0];
+      applyPreviewFilter(detailImage, color, detailLabel, swatch);
+    });
+  });
+  if (product.colors.length) {
+    applyPreviewFilter(detailImage, product.colors[0], detailLabel, swatches[0]);
+  }
 }
 
 function hasEl(id) {
@@ -642,6 +932,8 @@ function showToast(msg) {
 
 document.addEventListener('DOMContentLoaded', () => {
   cart = loadCart();
+  initCatalogPreviews();
+  renderProductDetail();
   initColorPicker();
   initTextColors();
   attachDesignLayer(byId('logo-wrap'));

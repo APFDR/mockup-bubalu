@@ -44,19 +44,19 @@
     <div class="products-grid" id="products-grid">
 
       <!-- Polo Básico -->
-      <div class="product-card" data-cat="polo">
+      <div class="product-card" data-cat="polo" data-product="polo-basico" role="link" tabindex="0" onclick="openProductDetail('polo-basico')">
         <div class="product-badge">Más vendido</div>
         <div class="product-img-wrap">
-          <img src="img/polera-basica-base2.png" alt="Polo Básico">
-          <div class="product-img-label">Polo Básico 160g</div>
+          <img class="product-card-image" src="img/polera-basica-base2.png" alt="Polo Básico">
+          <div class="product-img-label product-preview-label">Polo Básico 160g</div>
         </div>
         <div class="color-swatches">
-          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;" title="Blanco"></div>
-          <div class="swatch" style="background:#1a1a1a;" title="Negro"></div>
-          <div class="swatch" style="background:#d32f2f;" title="Rojo"></div>
-          <div class="swatch" style="background:#1a237e;" title="Azul"></div>
-          <div class="swatch" style="background:#f9c23c;" title="Amarillo"></div>
-          <div class="swatch" style="background:#4caf50;" title="Verde"></div>
+          <div class="swatch" data-color="blanco" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;" title="Blanco"></div>
+          <div class="swatch" data-color="negro" style="background:#1a1a1a;" title="Negro"></div>
+          <div class="swatch" data-color="rojo" style="background:#d32f2f;" title="Rojo"></div>
+          <div class="swatch" data-color="azul" style="background:#1a237e;" title="Azul"></div>
+          <div class="swatch" data-color="amarillo" style="background:#f9c23c;" title="Amarillo"></div>
+          <div class="swatch" data-color="verde" style="background:#4caf50;" title="Verde"></div>
         </div>
         <div class="product-info">
           <div class="product-name">Polo Básico</div>
@@ -75,21 +75,21 @@
             <div class="size-tag">XL</div>
             <div class="size-tag">2XL</div>
           </div>
-          <button class="btn-add-cart" onclick="addToCart('Polo Básico', 4000, '👕')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Polo Básico', 4000, '👕')">+ Agregar al Carrito</button>
         </div>
       </div>
 
       <!-- Polo Oversize -->
-      <div class="product-card" data-cat="polo">
+      <div class="product-card" data-cat="polo" data-product="polo-oversize" role="link" tabindex="0" onclick="openProductDetail('polo-oversize')">
         <div class="product-img-wrap">
-          <img src="img/polo-oversize.png" alt="Polo Oversize">
-          <div class="product-img-label">Polo Oversize 250g</div>
+          <img class="product-card-image" src="img/polo-oversize.png" alt="Polo Oversize">
+          <div class="product-img-label product-preview-label">Polo Oversize 250g</div>
         </div>
         <div class="color-swatches">
-          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
-          <div class="swatch" style="background:#1a1a1a;"></div>
-          <div class="swatch" style="background:#d32f2f;"></div>
-          <div class="swatch" style="background:#888;"></div>
+          <div class="swatch" data-color="blanco" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
+          <div class="swatch" data-color="negro" style="background:#1a1a1a;"></div>
+          <div class="swatch" data-color="rojo" style="background:#d32f2f;"></div>
+          <div class="swatch" data-color="gris" style="background:#888;"></div>
         </div>
         <div class="product-info">
           <div class="product-name">Polo Oversize</div>
@@ -107,21 +107,21 @@
             <div class="size-tag">L</div>
             <div class="size-tag">XL</div>
           </div>
-          <button class="btn-add-cart" onclick="addToCart('Polo Oversize', 9000, '👕')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Polo Oversize', 9000, '👕')">+ Agregar al Carrito</button>
         </div>
       </div>
 
       <!-- Polo Acid Wash -->
-      <div class="product-card" data-cat="polo">
+      <div class="product-card" data-cat="polo" data-product="polo-acidwash" role="link" tabindex="0" onclick="openProductDetail('polo-acidwash')">
         <div class="product-badge" style="background:var(--dark);">Exclusivo</div>
         <div class="product-img-wrap">
-          <img src="img/polo-acidwash.png" alt="Polo Acid Wash">
-          <div class="product-img-label">Polo Acid Wash 180g</div>
+          <img class="product-card-image" src="img/polo-acidwash.png" alt="Polo Acid Wash">
+          <div class="product-img-label product-preview-label">Polo Acid Wash 180g</div>
         </div>
         <div class="color-swatches">
-          <div class="swatch" style="background: radial-gradient(circle,#aaa,#eee);"></div>
-          <div class="swatch" style="background: radial-gradient(circle,#5a7fb5,#c0d8ff);"></div>
-          <div class="swatch" style="background: radial-gradient(circle,#b05050,#ffaaaa);"></div>
+          <div class="swatch" data-color="nube" style="background: radial-gradient(circle,#aaa,#eee);"></div>
+          <div class="swatch" data-color="azul" style="background: radial-gradient(circle,#5a7fb5,#c0d8ff);"></div>
+          <div class="swatch" data-color="rojo" style="background: radial-gradient(circle,#b05050,#ffaaaa);"></div>
         </div>
         <div class="product-info">
           <div class="product-name">Polo Acid Wash</div>
@@ -139,22 +139,22 @@
             <div class="size-tag selected">L</div>
             <div class="size-tag">XL</div>
           </div>
-          <button class="btn-add-cart" onclick="addToCart('Polo Acid Wash', 5000, '👕')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Polo Acid Wash', 5000, '👕')">+ Agregar al Carrito</button>
         </div>
       </div>
 
       <!-- Canguro -->
-      <div class="product-card" data-cat="poleron">
+      <div class="product-card" data-cat="poleron" data-product="canguro-nacional" role="link" tabindex="0" onclick="openProductDetail('canguro-nacional')">
         <div class="product-img-wrap">
-          <img src="img/poleron-canguro.png" alt="Canguro Nacional">
-          <div class="product-img-label">Canguro Nacional 320g</div>
+          <img class="product-card-image" src="img/poleron-canguro.png" alt="Canguro Nacional">
+          <div class="product-img-label product-preview-label">Canguro Nacional 320g</div>
         </div>
         <div class="color-swatches">
-          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
-          <div class="swatch" style="background:#1a1a1a;"></div>
-          <div class="swatch" style="background:#888;"></div>
-          <div class="swatch" style="background:#800020;"></div>
-          <div class="swatch" style="background:#1a237e;"></div>
+          <div class="swatch" data-color="blanco" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
+          <div class="swatch" data-color="negro" style="background:#1a1a1a;"></div>
+          <div class="swatch" data-color="gris" style="background:#888;"></div>
+          <div class="swatch" data-color="burdeo" style="background:#800020;"></div>
+          <div class="swatch" data-color="azul" style="background:#1a237e;"></div>
         </div>
         <div class="product-info">
           <div class="product-name">Canguro Nacional</div>
@@ -172,21 +172,21 @@
             <div class="size-tag">L</div>
             <div class="size-tag">XL</div>
           </div>
-          <button class="btn-add-cart" onclick="addToCart('Canguro Nacional', 9000, '🧥')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Canguro Nacional', 9000, '🧥')">+ Agregar al Carrito</button>
         </div>
       </div>
 
       <!-- Polo Nacional sin capucha -->
-      <div class="product-card" data-cat="poleron">
+      <div class="product-card" data-cat="poleron" data-product="polo-sin-capucha" role="link" tabindex="0" onclick="openProductDetail('polo-sin-capucha')">
         <div class="product-img-wrap">
-          <img src="img/poleron-polo.png" alt="Polo sin capucha">
-          <div class="product-img-label">Polo s/Capucha 320g</div>
+          <img class="product-card-image" src="img/poleron-polo.png" alt="Polo sin capucha">
+          <div class="product-img-label product-preview-label">Polo s/Capucha 320g</div>
         </div>
         <div class="color-swatches">
-          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
-          <div class="swatch" style="background:#1a1a1a;"></div>
-          <div class="swatch" style="background:#888;"></div>
-          <div class="swatch" style="background:#1a237e;"></div>
+          <div class="swatch" data-color="blanco" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
+          <div class="swatch" data-color="negro" style="background:#1a1a1a;"></div>
+          <div class="swatch" data-color="gris" style="background:#888;"></div>
+          <div class="swatch" data-color="azul" style="background:#1a237e;"></div>
         </div>
         <div class="product-info">
           <div class="product-name">Polo Nacional (Sin Capucha)</div>
@@ -204,15 +204,15 @@
             <div class="size-tag">L</div>
             <div class="size-tag">XL</div>
           </div>
-          <button class="btn-add-cart" onclick="addToCart('Polo s/Capucha', 8000, '🧥')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Polo s/Capucha', 8000, '🧥')">+ Agregar al Carrito</button>
         </div>
       </div>
 
       <!-- DTF Textil -->
-      <div class="product-card" data-cat="dtf">
+      <div class="product-card" data-cat="dtf" data-product="impresion-dtf" role="link" tabindex="0" onclick="openProductDetail('impresion-dtf')">
         <div class="product-img-wrap" style="background:#1a1a1a;">
-          <img src="img/dtf-print.webp" alt="Impresión DTF Textil">
-          <div class="product-img-label">Impresión Textil DTF</div>
+          <img class="product-card-image" src="img/dtf-print.webp" alt="Impresión DTF Textil">
+          <div class="product-img-label product-preview-label">Impresión Textil DTF</div>
         </div>
         <div class="product-info">
           <div class="product-name">Impresión DTF Textil</div>
@@ -225,15 +225,15 @@
             </div>
           </div>
           <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px; line-height:1.5;">Envía tu archivo en AI o PDF con resolución mínima 300 DPI</div>
-          <button class="btn-add-cart" onclick="addToCart('Impresión DTF Textil (1mt)', 12000, '🖨️')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Impresión DTF Textil (1mt)', 12000, '🖨️')">+ Agregar al Carrito</button>
         </div>
       </div>
 
       <!-- DTF UV -->
-      <div class="product-card" data-cat="dtf">
+      <div class="product-card" data-cat="dtf" data-product="impresion-uv" role="link" tabindex="0" onclick="openProductDetail('impresion-uv')">
         <div class="product-img-wrap" style="background:linear-gradient(135deg, #1a1a2e, #2d1b69);">
-          <img src="img/dtf-uv.png" alt="Impresión UV Premium">
-          <div class="product-img-label">Impresión UV Premium</div>
+          <img class="product-card-image" src="img/dtf-uv.png" alt="Impresión UV Premium">
+          <div class="product-img-label product-preview-label">Impresión UV Premium</div>
         </div>
         <div class="product-info">
           <div class="product-name">Impresión UV</div>
@@ -246,7 +246,7 @@
             </div>
           </div>
           <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px; line-height:1.5;">Brillo UV con relieve táctil. Ideal para marcas y etiquetas premium.</div>
-          <button class="btn-add-cart" onclick="addToCart('Impresión UV (1mt)', 30000, '✨')">+ Agregar al Carrito</button>
+          <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart('Impresión UV (1mt)', 30000, '✨')">+ Agregar al Carrito</button>
         </div>
       </div>
 
