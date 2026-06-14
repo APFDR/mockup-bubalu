@@ -1110,7 +1110,26 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  nav { height: 60px; }
+  nav {
+    height: auto;
+    min-height: 60px;
+    padding: 10px 5%;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.2px;
+  }
+  .cart-btn {
+    padding: 6px 12px;
+  }
   .designer-controls { flex: 0 0 100%; max-height: none; }
   .designer-preview { min-width: 100%; }
   .detail-layout { grid-template-columns: 1fr; }
