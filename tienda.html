@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | DTF Textil, Poleras y Personalización Chile — DEMO</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="cart-sidebar.html" class="cart-btn">🛒 Carrito <span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<!-- ====== CATALOG ====== -->
+<div class="page active" id="page-catalog">
+  <div style="background:var(--dark); padding:50px 5%; text-align:center;">
+    <span class="eyebrow" style="color:var(--pink-light);">Conectado con</span>
+    <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:10px;">
+      <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3rem; letter-spacing:1px; color:white;">Catálogo Oficial</h2>
+      <div class="shopify-badge">● Shopify</div>
+    </div>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.9rem;">Pago 100% seguro · Envío rastreado · Garantía de calidad</p>
+  </div>
+
+  <div class="section">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCatalog('all', this)">Todos</button>
+      <button class="filter-btn" onclick="filterCatalog('polo', this)">Polos / Poleras</button>
+      <button class="filter-btn" onclick="filterCatalog('poleron', this)">Polerones</button>
+      <button class="filter-btn" onclick="filterCatalog('dtf', this)">Impresión DTF</button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+
+      <!-- Polo Básico -->
+      <div class="product-card" data-cat="polo">
+        <div class="product-badge">Más vendido</div>
+        <div class="product-img-wrap">
+          <img src="img/polera-basica-base2.png" alt="Polo Básico">
+          <div class="product-img-label">Polo Básico 160g</div>
+        </div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;" title="Blanco"></div>
+          <div class="swatch" style="background:#1a1a1a;" title="Negro"></div>
+          <div class="swatch" style="background:#d32f2f;" title="Rojo"></div>
+          <div class="swatch" style="background:#1a237e;" title="Azul"></div>
+          <div class="swatch" style="background:#f9c23c;" title="Amarillo"></div>
+          <div class="swatch" style="background:#4caf50;" title="Verde"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Polo Básico</div>
+          <div class="product-gram">160 gramos · 100% algodón</div>
+          <div class="delivery-badge">🚚 Llega en 3–5 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$4.000</div>
+              <div class="price-bulk">Desde 6 unid: $3.500 c/u</div>
+            </div>
+          </div>
+          <div class="sizes-row">
+            <div class="size-tag">S</div>
+            <div class="size-tag">M</div>
+            <div class="size-tag selected">L</div>
+            <div class="size-tag">XL</div>
+            <div class="size-tag">2XL</div>
+          </div>
+          <button class="btn-add-cart" onclick="addToCart('Polo Básico', 4000, '👕')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- Polo Oversize -->
+      <div class="product-card" data-cat="polo">
+        <div class="product-img-wrap">
+          <img src="img/polo-oversize.png" alt="Polo Oversize">
+          <div class="product-img-label">Polo Oversize 250g</div>
+        </div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
+          <div class="swatch" style="background:#1a1a1a;"></div>
+          <div class="swatch" style="background:#d32f2f;"></div>
+          <div class="swatch" style="background:#888;"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Polo Oversize</div>
+          <div class="product-gram">250 gramos · Algodón premium</div>
+          <div class="delivery-badge">🚚 Llega en 3–5 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$9.000</div>
+              <div class="price-bulk">Desde 3 unid: $8.000 c/u</div>
+            </div>
+          </div>
+          <div class="sizes-row">
+            <div class="size-tag">S</div>
+            <div class="size-tag selected">M</div>
+            <div class="size-tag">L</div>
+            <div class="size-tag">XL</div>
+          </div>
+          <button class="btn-add-cart" onclick="addToCart('Polo Oversize', 9000, '👕')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- Polo Acid Wash -->
+      <div class="product-card" data-cat="polo">
+        <div class="product-badge" style="background:var(--dark);">Exclusivo</div>
+        <div class="product-img-wrap">
+          <img src="img/polo-acidwash.png" alt="Polo Acid Wash">
+          <div class="product-img-label">Polo Acid Wash 180g</div>
+        </div>
+        <div class="color-swatches">
+          <div class="swatch" style="background: radial-gradient(circle,#aaa,#eee);"></div>
+          <div class="swatch" style="background: radial-gradient(circle,#5a7fb5,#c0d8ff);"></div>
+          <div class="swatch" style="background: radial-gradient(circle,#b05050,#ffaaaa);"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Polo Acid Wash</div>
+          <div class="product-gram">180 gramos · Efecto desteñido</div>
+          <div class="delivery-badge">🚚 Llega en 3–5 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$5.000</div>
+              <div class="price-bulk">Desde 3 unid: $4.500 c/u</div>
+            </div>
+          </div>
+          <div class="sizes-row">
+            <div class="size-tag">S</div>
+            <div class="size-tag">M</div>
+            <div class="size-tag selected">L</div>
+            <div class="size-tag">XL</div>
+          </div>
+          <button class="btn-add-cart" onclick="addToCart('Polo Acid Wash', 5000, '👕')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- Canguro -->
+      <div class="product-card" data-cat="poleron">
+        <div class="product-img-wrap">
+          <img src="img/poleron-canguro.png" alt="Canguro Nacional">
+          <div class="product-img-label">Canguro Nacional 320g</div>
+        </div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
+          <div class="swatch" style="background:#1a1a1a;"></div>
+          <div class="swatch" style="background:#888;"></div>
+          <div class="swatch" style="background:#800020;"></div>
+          <div class="swatch" style="background:#1a237e;"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Canguro Nacional</div>
+          <div class="product-gram">320 gramos · Polar interior</div>
+          <div class="delivery-badge">🚚 Llega en 3–5 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$9.000</div>
+              <div class="price-bulk">Desde 6 unid: $8.500 c/u</div>
+            </div>
+          </div>
+          <div class="sizes-row">
+            <div class="size-tag">S</div>
+            <div class="size-tag selected">M</div>
+            <div class="size-tag">L</div>
+            <div class="size-tag">XL</div>
+          </div>
+          <button class="btn-add-cart" onclick="addToCart('Canguro Nacional', 9000, '🧥')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- Polo Nacional sin capucha -->
+      <div class="product-card" data-cat="poleron">
+        <div class="product-img-wrap">
+          <img src="img/poleron-polo.png" alt="Polo sin capucha">
+          <div class="product-img-label">Polo s/Capucha 320g</div>
+        </div>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#fff; box-shadow:0 0 0 1.5px #ccc;"></div>
+          <div class="swatch" style="background:#1a1a1a;"></div>
+          <div class="swatch" style="background:#888;"></div>
+          <div class="swatch" style="background:#1a237e;"></div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Polo Nacional (Sin Capucha)</div>
+          <div class="product-gram">320 gramos · Algodón polar</div>
+          <div class="delivery-badge">🚚 Llega en 3–5 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$8.000</div>
+              <div class="price-bulk">Desde 6 unid: $7.500 c/u</div>
+            </div>
+          </div>
+          <div class="sizes-row">
+            <div class="size-tag">S</div>
+            <div class="size-tag selected">M</div>
+            <div class="size-tag">L</div>
+            <div class="size-tag">XL</div>
+          </div>
+          <button class="btn-add-cart" onclick="addToCart('Polo s/Capucha', 8000, '🧥')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- DTF Textil -->
+      <div class="product-card" data-cat="dtf">
+        <div class="product-img-wrap" style="background:#1a1a1a;">
+          <img src="img/dtf-print.webp" alt="Impresión DTF Textil">
+          <div class="product-img-label">Impresión Textil DTF</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Impresión DTF Textil</div>
+          <div class="product-gram">Metro de 58cm · Full color</div>
+          <div class="delivery-badge">📦 Producción: 2–3 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$12.000/mt</div>
+              <div class="price-bulk">10mts: $10.000 · 20mts: $8.000</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px; line-height:1.5;">Envía tu archivo en AI o PDF con resolución mínima 300 DPI</div>
+          <button class="btn-add-cart" onclick="addToCart('Impresión DTF Textil (1mt)', 12000, '🖨️')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+      <!-- DTF UV -->
+      <div class="product-card" data-cat="dtf">
+        <div class="product-img-wrap" style="background:linear-gradient(135deg, #1a1a2e, #2d1b69);">
+          <img src="img/dtf-uv.png" alt="Impresión UV Premium">
+          <div class="product-img-label">Impresión UV Premium</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Impresión UV</div>
+          <div class="product-gram">Metro de 58cm · Alta definición</div>
+          <div class="delivery-badge">📦 Producción: 2–3 días hábiles</div>
+          <div class="product-price-row">
+            <div>
+              <div class="price-unit">$30.000/mt</div>
+              <div class="price-bulk">10mts: $25.000 · 20mts: $20.000</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:10px; line-height:1.5;">Brillo UV con relieve táctil. Ideal para marcas y etiquetas premium.</div>
+          <button class="btn-add-cart" onclick="addToCart('Impresión UV (1mt)', 30000, '✨')">+ Agregar al Carrito</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="funciones.js"></script>
+</body>
+</html>

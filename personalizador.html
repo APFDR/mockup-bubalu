@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | Diseñador Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="cart-sidebar.html" class="cart-btn">🛒 Carrito <span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<!-- ====== DESIGNER ====== -->
+<div class="page active" id="page-designer">
+  <div style="background:var(--dark); padding:50px 5%; text-align:center;">
+    <span class="eyebrow" style="color:var(--pink-light);">Studio de Diseño</span>
+    <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3rem; letter-spacing:1px; color:white; margin-bottom:10px;">Diseñador de Prendas</h2>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.9rem;">Personaliza tu prenda y paga online — sin salir de la página</p>
+  </div>
+
+  <div class="section" style="max-width:1300px;">
+
+    <!-- Model selector -->
+    <div style="margin-bottom:25px;">
+      <div style="font-weight:900; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:#888; margin-bottom:12px;">Elige tu modelo:</div>
+      <div class="model-tabs">
+        <div class="model-tab active" onclick="selectModel('basica', 4000, this)">
+          <div class="model-tab-icon"><img src="img/polera-basica-base2.png" alt="Polera básica"></div>
+          <div class="model-tab-name">Polera Básica</div>
+          <div class="model-tab-price">$4.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('oversize', 9000, this)">
+          <div class="model-tab-icon"><img src="img/polera-oversize-base.png" alt="Oversize"></div>
+          <div class="model-tab-name">Oversize</div>
+          <div class="model-tab-price">$9.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('acidwash', 5000, this)">
+          <div class="model-tab-icon"><img src="img/polo-acidwash.png" alt="Acid Wash"></div>
+          <div class="model-tab-name">Acid Wash</div>
+          <div class="model-tab-price">$5.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('canguro', 9000, this)">
+          <div class="model-tab-icon"><img src="img/poleron-canguro-base.png" alt="Canguro"></div>
+          <div class="model-tab-name">Canguro</div>
+          <div class="model-tab-price">$9.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('polo_sc', 8000, this)">
+          <div class="model-tab-icon"><img src="img/poleron-polo-base.png" alt="Polo sin capucha"></div>
+          <div class="model-tab-name">Polo s/Capucha</div>
+          <div class="model-tab-price">$8.000</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="designer-layout">
+      <!-- Preview -->
+      <div class="designer-preview">
+        <div id="capture-area" class="canvas-container">
+          <div id="garment-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; transition:background 0.3s; z-index:0;"></div>
+          <div class="garment-display" style="z-index:1; pointer-events:none; transition:all 0.3s; filter:drop-shadow(0 10px 30px rgba(0,0,0,0.08));">
+            <img id="garment-image" src="img/polera-basica-base2.png" alt="Polera básica">
+          </div>
+          <div class="design-area" id="design-area">
+            <div id="logo-wrap" class="draggable-el design-layer" data-layer-type="image" style="top:120px; left:120px; display:none; width:130px;">
+              <img id="logo-preview" style="width:100%; display:block; pointer-events:none; border-radius:4px;">
+              <div class="resizer"></div>
+            </div>
+            <div id="text-wrap" class="draggable-el design-layer" data-layer-type="text" style="top:170px; left:80px; display:none;">
+              <span id="text-render" style="font-size:28px; white-space:nowrap; display:block; font-family:'Bebas Neue'; color:#000; letter-spacing:1px;">TU TEXTO</span>
+              <div class="resizer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:15px;">
+          <div class="color-label">Color de la Prenda:</div>
+          <div class="color-grid" id="color-picker"></div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="designer-controls">
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">1</div> Cantidad por talla</div>
+          <div class="qty-sizes">
+            <div class="qty-size-item"><label>S</label><input type="number" class="size-input" data-size="S" value="0" min="0"></div>
+            <div class="qty-size-item"><label>M</label><input type="number" class="size-input" data-size="M" value="1" min="0"></div>
+            <div class="qty-size-item"><label>L</label><input type="number" class="size-input" data-size="L" value="0" min="0"></div>
+            <div class="qty-size-item"><label>XL</label><input type="number" class="size-input" data-size="XL" value="0" min="0"></div>
+          </div>
+        </div>
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">2</div> Tu logo o imagen</div>
+          <button class="font-btn" type="button" onclick="triggerImageUpload()" style="width:100%; margin-bottom:8px;">+ Añadir imagen</button>
+          <button class="danger-btn" type="button" onclick="deleteSelectedDesignElement()" style="width:100%; margin-bottom:8px;">Eliminar imagen seleccionada</button>
+          <input id="designer-image-input" type="file" accept="image/*" onchange="handleDesignImageUpload(this)" style="display:none;">
+          <input type="file" accept="image/*" onchange="handleLogo(this)" style="margin-bottom:8px;">
+          <div style="font-size:0.72rem; color:var(--text-muted);">PNG con fondo transparente recomendado</div>
+          <div style="margin-top:10px;">
+            <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:6px;">Posición del logo:</div>
+            <div class="design-position-grid">
+              <div class="pos-btn" onclick="moveElement('logo-wrap','50px','50px')">↖ Arriba Izq</div>
+              <div class="pos-btn active" onclick="moveElement('logo-wrap','50px','calc(50% - 65px)')">↑ Arriba Centro</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','50px','calc(100% - 180px)')">↗ Arriba Der</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','180px','50px')">← Centro Izq</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','180px','calc(50% - 65px)')">• Centro</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','180px','calc(100% - 180px)')">→ Centro Der</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">3</div> Tu texto personalizado</div>
+          <button class="font-btn" type="button" onclick="createTextLayer(document.getElementById('designer-text-input').value || 'TU TEXTO')" style="width:100%; margin-bottom:8px;">+ Añadir texto</button>
+          <button class="danger-btn" type="button" onclick="deleteSelectedDesignElement()" style="width:100%; margin-bottom:8px;">Eliminar texto seleccionado</button>
+          <input id="designer-text-input" type="text" placeholder="Escribe aquí tu texto..." oninput="handleText(this.value)" style="margin-bottom:10px;">
+          <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:8px;">Tipografía:</div>
+          <div class="font-grid">
+            <button class="font-btn" onclick="setFont('Bebas Neue')" style="font-family:'Bebas Neue'; font-size:1rem; letter-spacing:1px;">Bebas</button>
+            <button class="font-btn" onclick="setFont('Pacifico')" style="font-family:'Pacifico'; font-size:0.75rem;">Pacifico</button>
+            <button class="font-btn" onclick="setFont('Anton')" style="font-family:'Anton';">Anton</button>
+            <button class="font-btn" onclick="setFont('Lobster')" style="font-family:'Lobster';">Lobster</button>
+            <button class="font-btn" onclick="setFont('Permanent Marker')" style="font-family:'Permanent Marker'; font-size:0.7rem;">Marker</button>
+            <button class="font-btn" onclick="setFont('Montserrat')" style="font-family:'Montserrat'; font-weight:900; font-size:0.72rem;">Bold</button>
+          </div>
+          <div style="margin-top:10px;">
+            <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:6px;">Tamaño del texto:</div>
+            <div class="ctrl-range-row">
+              <input type="range" min="14" max="80" value="28" oninput="setTextSize(this.value)">
+              <span id="size-label">28px</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:6px;">Color del texto:</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;" id="text-colors"></div>
+          </div>
+        </div>
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">4</div> Precio estimado</div>
+          <div class="price-summary">
+            <div class="price-row-s"><span>Prenda base (c/u):</span><span id="d-price-base">$4.000</span></div>
+            <div class="price-row-s"><span>Estampado DTF:</span><span id="d-price-imp">$0</span></div>
+            <div class="price-row-s"><span>Cantidad total:</span><span id="d-qty">1 unid.</span></div>
+            <div class="price-total"><span>TOTAL:</span><span id="d-total">$4.000</span></div>
+          </div>
+        </div>
+
+        <button class="btn-primary btn" style="width:100%; border-radius:12px; font-size:0.9rem;" onclick="openDesignOrder()">
+          ✅ Finalizar y Pagar Online
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="funciones.js"></script>
+</body>
+</html>

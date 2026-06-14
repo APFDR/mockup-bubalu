@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="cart-sidebar.html" class="cart-btn">🛒 Carrito <span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<div class="section" style="max-width:900px;">
+  <div class="section-title">
+    <span class="eyebrow">Pago Seguro</span>
+    <h2>Finaliza tu compra</h2>
+  </div>
+  <div style="background:white; border-radius:20px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.06); margin-bottom:25px;">
+    <a class="btn btn-outline" href="cart-sidebar.html" style="color:var(--dark); border-color:var(--gray2);">Volver al carrito</a>
+  </div>
+</div>
+
+<!-- ====== CHECKOUT MODAL ====== -->
+<div class="modal-overlay open" id="checkout-modal">
+  <div class="modal-box" id="checkout-box" style="position:relative;">
+    <a href="cart-sidebar.html" aria-label="Cerrar checkout" style="position:absolute; right:24px; top:20px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; color:var(--dark); background:var(--gray); font-size:1.1rem; font-weight:700;">✕</a>
+    <div id="checkout-form-view">
+      <h3>Finalizar Compra</h3>
+      <p class="subtitle">Completa tus datos — pago 100% seguro vía Shopify</p>
+
+      <div class="delivery-info">
+        <div class="delivery-icon">🚚</div>
+        <div class="delivery-text">
+          <strong>Llega en 3–5 días hábiles</strong>
+          <span>Despacho con Starken · Seguimiento en línea</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group"><label>Nombre</label><input type="text" id="co-fname" placeholder="Ej: María"></div>
+        <div class="form-group"><label>Apellido</label><input type="text" id="co-lname" placeholder="Ej: González"></div>
+      </div>
+      <div class="form-group"><label>Correo electrónico</label><input type="email" id="co-email" placeholder="tu@email.com"></div>
+      <div class="form-group"><label>Teléfono</label><input type="text" id="co-phone" placeholder="+56 9 XXXX XXXX"></div>
+      <div class="form-group"><label>Dirección de entrega</label><input type="text" placeholder="Calle, número, depto."></div>
+      <div class="form-row">
+        <div class="form-group"><label>Ciudad</label><input type="text" placeholder="Santiago"></div>
+        <div class="form-group"><label>Región</label><select><option>Metropolitana</option><option>Valparaíso</option><option>Biobío</option><option>Araucanía</option><option>Otra</option></select></div>
+      </div>
+
+      <div class="form-group"><label>Método de pago</label>
+        <select>
+          <option>💳 Tarjeta de crédito / débito</option>
+          <option>🏦 Transferencia Webpay Plus</option>
+          <option>📱 Flow (Débito directo)</option>
+        </select>
+      </div>
+
+      <div class="order-summary">
+        <h4>Resumen del pedido</h4>
+        <div id="co-summary-items"></div>
+        <div class="summary-row"><span>Envío:</span><span style="color:var(--green);">Gratis</span></div>
+        <div class="summary-total"><span>Total a pagar:</span><span id="co-total">$0</span></div>
+      </div>
+
+      <div class="modal-btns">
+        <button class="btn-confirm" onclick="confirmOrder()">🔒 Confirmar y Pagar</button>
+        <button class="btn-cancel-modal" onclick="closeModal('checkout-modal')">Cancelar</button>
+      </div>
+    </div>
+
+    <div id="checkout-success-view" style="display:none;">
+      <div class="success-screen">
+        <div class="success-icon">🎉</div>
+        <h3>¡Pedido Confirmado!</h3>
+        <p>Tu pedido ha sido recibido por Bubalu. Recibirás un correo de confirmación con los detalles y el número de seguimiento.</p>
+        <div class="tracking-box">
+          <div style="font-weight:900; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:15px;">Estado de tu pedido:</div>
+          <div class="tracking-step"><div class="tracking-dot done"></div><span style="font-weight:700; color:var(--green);">✓ Pago confirmado</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot done"></div><span style="font-weight:700; color:var(--green);">✓ Pedido recibido por Bubalu</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot pending"></div><span style="color:var(--text-muted);">En producción... (1–2 días)</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot pending"></div><span style="color:var(--text-muted);">En camino con Starken</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot pending"></div><span style="color:var(--text-muted);">Entrega estimada: en 3–5 días hábiles</span></div>
+        </div>
+        <div style="background:var(--pink-light); border-radius:12px; padding:15px; margin-bottom:20px; font-size:0.85rem;">
+          <strong>Número de pedido: #BU-20240<span id="order-num"></span></strong><br>
+          <span style="color:var(--text-muted);">Enviado a tu correo electrónico</span>
+        </div>
+        <button class="btn-primary btn" style="border-radius:12px;" onclick="closeModal('checkout-modal'); clearCart();">Ver más productos</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="funciones.js"></script>
+</body>
+</html>

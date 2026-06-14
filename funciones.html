@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | Funciones Compartidas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="cart-sidebar.html" class="cart-btn">🛒 Carrito <span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<div class="section" style="max-width:900px;">
+  <div class="section-title">
+    <span class="eyebrow">Soporte</span>
+    <h2>Funciones compartidas del sitio</h2>
+  </div>
+  <div style="background:white; border-radius:20px; padding:30px; box-shadow:0 4px 15px rgba(0,0,0,0.06); text-align:center;">
+    <p style="color:var(--text-muted); margin-bottom:20px;">Las páginas del sitio usan <strong>funciones.js</strong> para la navegación, el carrito y el checkout.</p>
+    <a class="btn btn-primary" href="funciones.js">Abrir script</a>
+  </div>
+</div>
+
+<script>
+// ===== STATE =====
+let cart = [];
+let designerBasePrice = 4000;
+let designerModel = 'basica';
+let selectedColorName = 'Blanco';
+
+const garmentColors = [
+  {id:'blanco', hex:'#ffffff', n:'Blanco'},
+  {id:'negro', hex:'#1a1a1a', n:'Negro'},
+  {id:'rojo', hex:'#d32f2f', n:'Rojo'},
+  {id:'azul', hex:'#1a237e', n:'Azul'},
+  {id:'amarillo', hex:'#f9c23c', n:'Amarillo'},
+  {id:'verde', hex:'#2e7d32', n:'Verde'},
+  {id:'burdeo', hex:'#800020', n:'Burdeo'},
+  {id:'gris', hex:'#888888', n:'Gris'},
+];
+
+const textColors = [
+  '#000000','#ffffff','#d32f2f','#1a237e','#f9c23c','#e21b79','#2e7d32','#ff6f00'
+];
+
+// ===== PAGE NAVIGATION =====
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  const pnav = document.getElementById('page-nav');
+  pnav.style.display = page === 'home' ? 'none' : 'flex';
+  document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+  if (page !== 'home') {
+    const tab = document.getElementById('tab-' + page);
+    if (tab) tab.classList.add('active');
+  }
+  window.scrollTo(0, 0);
+}
+
+// ===== CATALOG FILTER =====
+function filterCatalog(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+// ===== CART =====
+function openCart() {
+  document.getElementById('cart-overlay').classList.add('open');
+}
+function closeCart(e) {
+  if (e.target === document.getElementById('cart-overlay')) {
+    document.getElementById('cart-overlay').classList.remove('open');
+  }
+}
+function closeCartBtn() {
+  document.getElementById('cart-overlay').classList.remove('open');
+}
+
+function addToCart(name, price, emoji) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, price, emoji, qty: 1 });
+  }
+  updateCart();
+  openCart();
+  showToast('✅ ' + name + ' agregado al carrito');
+}
+
+function updateCart() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('cart-count').textContent = count;
+
+  const itemsEl = document.getElementById('cart-items');
+  const emptyEl = document.getElementById('cart-empty');
+
+  if (cart.length === 0) {
+    emptyEl.style.display = '';
+    const existing = itemsEl.querySelectorAll('.cart-item');
+    existing.forEach(e => e.remove());
+  } else {
+    emptyEl.style.display = 'none';
+    itemsEl.querySelectorAll('.cart-item').forEach(e => e.remove());
+    cart.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <div class="cart-item-img">${item.emoji}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-detail">Talla: L · Color: Blanco</div>
+          <div class="cart-item-price">$${(item.price * item.qty).toLocaleString('es-CL')}</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+            <span style="font-weight:700; font-size:0.9rem;">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+            <button class="qty-btn" onclick="removeItem(${idx})" style="margin-left:5px; font-size:0.75rem;">✕</button>
+          </div>
+        </div>
+      `;
+      itemsEl.appendChild(div);
+    });
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('cart-subtotal').textContent = '$' + total.toLocaleString('es-CL');
+  document.getElementById('cart-total-price').textContent = '$' + total.toLocaleString('es-CL');
+}
+
+function changeQty(idx, delta) {
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  updateCart();
+}
+
+function removeItem(idx) {
+  cart.splice(idx, 1);
+  updateCart();
+}
+
+function clearCart() {
+  cart = [];
+  updateCart();
+}
+
+// ===== CHECKOUT =====
+function openCheckout() {
+  closeCartBtn();
+  document.getElementById('checkout-form-view').style.display = '';
+  document.getElementById('checkout-success-view').style.display = 'none';
+
+  const summaryEl = document.getElementById('co-summary-items');
+  summaryEl.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'summary-row';
+    div.innerHTML = `<span>${item.emoji} ${item.name} ×${item.qty}</span><span>$${(item.price * item.qty).toLocaleString('es-CL')}</span>`;
+    summaryEl.appendChild(div);
+    total += item.price * item.qty;
+  });
+  document.getElementById('co-total').textContent = '$' + total.toLocaleString('es-CL');
+  document.getElementById('checkout-modal').classList.add('open');
+}
+
+function openDesignOrder() {
+  // Build cart item from designer
+  let qty = 0;
+  document.querySelectorAll('.size-input').forEach(i => qty += parseInt(i.value) || 0);
+  if (qty === 0) { showToast('⚠️ Agrega al menos 1 prenda'); return; }
+  const hasDesign = document.getElementById('logo-wrap').style.display !== 'none' || document.getElementById('text-wrap').style.display !== 'none';
+  const imp = hasDesign ? 3500 : 0;
+  const total = (designerBasePrice + imp) * qty;
+
+  cart = [{ name: 'Polera personalizada (' + designerModel + ')', price: designerBasePrice + imp, emoji: '🎨', qty }];
+  updateCart();
+
+  document.getElementById('checkout-form-view').style.display = '';
+  document.getElementById('checkout-success-view').style.display = 'none';
+
+  const summaryEl = document.getElementById('co-summary-items');
+  summaryEl.innerHTML = '';
+  const div = document.createElement('div');
+  div.className = 'summary-row';
+  div.innerHTML = `<span>🎨 Prenda personalizada ×${qty}</span><span>$${total.toLocaleString('es-CL')}</span>`;
+  summaryEl.appendChild(div);
+  if (hasDesign) {
+    const div2 = document.createElement('div');
+    div2.className = 'summary-row';
+    div2.innerHTML = `<span style="color:var(--text-muted); font-size:0.8rem;">  ↳ Incluye estampado DTF</span><span style="font-size:0.8rem;">$${(imp*qty).toLocaleString('es-CL')}</span>`;
+    summaryEl.appendChild(div2);
+  }
+  document.getElementById('co-total').textContent = '$' + total.toLocaleString('es-CL');
+  document.getElementById('checkout-modal').classList.add('open');
+}
+
+function confirmOrder() {
+  const name = document.getElementById('co-fname').value;
+  const email = document.getElementById('co-email').value;
+  if (!name || !email) { showToast('⚠️ Completa tu nombre y correo para continuar'); return; }
+  document.getElementById('checkout-form-view').style.display = 'none';
+  document.getElementById('checkout-success-view').style.display = '';
+  document.getElementById('order-num').textContent = Math.floor(Math.random() * 9000 + 1000);
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+// ===== DESIGNER =====
+function selectModel(model, price, btn) {
+  designerModel = model;
+  designerBasePrice = price;
+  document.querySelectorAll('.model-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const emojiMap = { basica:'👕', oversize:'👕', acidwash:'👕', canguro:'🧥', polo_sc:'🧥' };
+  document.getElementById('garment-emoji').textContent = emojiMap[model] || '👕';
+  updateDesignCalc();
+}
+
+function initColorPicker() {
+  const cp = document.getElementById('color-picker');
+  cp.innerHTML = '';
+  garmentColors.forEach((c, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'color-dot' + (i === 0 ? ' active' : '');
+    dot.style.background = c.hex;
+    if (c.id === 'blanco') dot.style.border = '3px solid #ddd';
+    const tt = document.createElement('div');
+    tt.className = 'dot-tooltip';
+    tt.textContent = c.n;
+    dot.appendChild(tt);
+    dot.onclick = () => {
+      selectedColorName = c.n;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+      document.getElementById('garment-bg').style.background = 'none';
+      const emoji = document.getElementById('garment-emoji');
+      const filterMap = {
+        negro: 'brightness(0)',
+        rojo: 'sepia(1) saturate(5) hue-rotate(320deg)',
+        azul: 'sepia(1) saturate(3) hue-rotate(200deg)',
+        amarillo: 'sepia(1) saturate(5) hue-rotate(20deg)',
+        verde: 'sepia(1) saturate(3) hue-rotate(90deg)',
+        burdeo: 'sepia(1) saturate(4) hue-rotate(295deg)',
+        gris: 'grayscale(1) brightness(0.7)',
+        blanco: 'none',
+      };
+      emoji.style.filter = filterMap[c.id] || 'none';
+      updateDesignCalc();
+    };
+    cp.appendChild(dot);
+  });
+}
+
+function initTextColors() {
+  const el = document.getElementById('text-colors');
+  el.innerHTML = '';
+  textColors.forEach(hex => {
+    const dot = document.createElement('div');
+    dot.style.cssText = `width:28px; height:28px; border-radius:50%; background:${hex}; cursor:pointer; border:3px solid transparent; box-shadow:0 0 0 1px rgba(0,0,0,0.12); transition:all 0.15s; flex-shrink:0;`;
+    if (hex === '#ffffff') dot.style.boxShadow = '0 0 0 1.5px #ccc';
+    dot.onclick = () => {
+      document.getElementById('text-render').style.color = hex;
+      el.querySelectorAll('div').forEach(d => d.style.borderColor = 'transparent');
+      dot.style.borderColor = '#e21b79';
+    };
+    el.appendChild(dot);
+  });
+}
+
+function handleLogo(input) {
+  if (input.files && input.files[0]) {
+    const r = new FileReader();
+    r.onload = e => {
+      document.getElementById('logo-preview').src = e.target.result;
+      document.getElementById('logo-wrap').style.display = 'block';
+      updateDesignCalc();
+    };
+    r.readAsDataURL(input.files[0]);
+  }
+}
+
+function handleText(v) {
+  document.getElementById('text-render').textContent = v || 'TU TEXTO';
+  document.getElementById('text-wrap').style.display = v ? 'block' : 'none';
+  updateDesignCalc();
+}
+
+function setFont(f) {
+  document.getElementById('text-render').style.fontFamily = f;
+}
+
+function setTextSize(v) {
+  document.getElementById('text-render').style.fontSize = v + 'px';
+  document.getElementById('size-label').textContent = v + 'px';
+}
+
+function moveElement(id, top, left) {
+  const el = document.getElementById(id);
+  el.style.top = top;
+  el.style.left = left;
+}
+
+function updateDesignCalc() {
+  let qty = 0;
+  document.querySelectorAll('.size-input').forEach(i => qty += parseInt(i.value) || 0);
+  const hasDesign = document.getElementById('logo-wrap').style.display !== 'none' || document.getElementById('text-wrap').style.display !== 'none';
+  const imp = hasDesign ? 3500 : 0;
+  document.getElementById('d-price-base').textContent = '$' + designerBasePrice.toLocaleString('es-CL');
+  document.getElementById('d-price-imp').textContent = imp > 0 ? '$' + imp.toLocaleString('es-CL') : '$0';
+  document.getElementById('d-qty').textContent = qty + ' unid.';
+  document.getElementById('d-total').textContent = '$' + ((designerBasePrice + imp) * qty).toLocaleString('es-CL');
+}
+
+function makeDraggable(el) {
+  let isDrag = false, isResize = false, sx, sy, sw, sl, st;
+  const resizer = el.querySelector('.resizer');
+  const onStart = e => {
+    const c = e.touches ? e.touches[0] : e;
+    if (e.target === resizer) isResize = true; else isDrag = true;
+    sx = c.clientX; sy = c.clientY;
+    sw = el.offsetWidth; sl = el.offsetLeft; st = el.offsetTop;
+    e.preventDefault();
+  };
+  const onMove = e => {
+    if (!isDrag && !isResize) return;
+    const c = e.touches ? e.touches[0] : e;
+    if (isDrag) { el.style.left = (sl + c.clientX - sx) + 'px'; el.style.top = (st + c.clientY - sy) + 'px'; }
+    if (isResize) { const nw = sw + c.clientX - sx; if (nw > 40) el.style.width = nw + 'px'; }
+    updateDesignCalc();
+  };
+  const onEnd = () => isDrag = isResize = false;
+  el.addEventListener('mousedown', onStart);
+  el.addEventListener('touchstart', onStart, { passive: false });
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('mouseup', onEnd);
+  document.addEventListener('touchend', onEnd);
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  initColorPicker();
+  initTextColors();
+  makeDraggable(document.getElementById('logo-wrap'));
+  makeDraggable(document.getElementById('text-wrap'));
+  document.querySelectorAll('.size-input').forEach(i => i.addEventListener('input', updateDesignCalc));
+  updateDesignCalc();
+  updateCart();
+});
+</script>
+</body>
+</html>

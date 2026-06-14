@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | DTF Textil, Poleras y Personalización Chile — DEMO</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- WATERMARK BANNER -->
+<div class="watermark-banner">
+  ⚠️ Demo de cómo se vería la página web — Creada por Ana Freitez ⚠️
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="cart-btn">
+      🛒 Carrito <span class="cart-count" id="cart-count">0</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ====== HOME ====== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>POTENCIA<br><span>TU MARCA</span><br>CON BUBALU</h1>
+    <p>Insumos textiles de alta calidad, poleras premium y tecnología DTF de última generación. Diseña tu prenda online y recíbela en tu puerta.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="tienda.html">🛒 Ver Catálogo</a>
+      <a class="btn btn-outline" href="personalizador.html">🎨 Diseñar mi Polera</a>
+    </div>
+  </header>
+
+  <div class="ticker-wrap">
+    <span class="ticker">✦ IMPRESIÓN DTF TEXTIL ✦ POLERAS AL POR MAYOR ✦ PAGO ONLINE SEGURO ✦ ENVÍO A TODO CHILE ✦ PERSONALIZACIÓN ONLINE ✦ IMPRESIÓN UV ✦ OVERSIZE · ACID WASH · CANGURO ✦ BUBALU CHILE &nbsp;&nbsp;&nbsp;</span>
+  </div>
+
+  <!-- Categories -->
+  <div class="section">
+    <div class="section-title">
+      <span class="eyebrow">Nuestros Productos</span>
+      <h2>Todo lo que tu emprendimiento necesita</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;">
+      <a href="tienda.html" style="background:white; border-radius:20px; padding:30px; text-align:center; cursor:pointer; transition:all 0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-decoration:none; color:inherit;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:3rem; margin-bottom:15px;">👕</div>
+        <div style="font-weight:900; margin-bottom:5px;">Poleras & Polerones</div>
+        <div style="font-size:0.8rem; color:var(--text-muted);">160g – 320g · 5 colores</div>
+        <div style="margin-top:12px; color:var(--pink); font-weight:700; font-size:0.85rem;">Desde $4.000 →</div>
+      </a>
+      <a href="tienda.html" style="background:white; border-radius:20px; padding:30px; text-align:center; cursor:pointer; transition:all 0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-decoration:none; color:inherit;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:3rem; margin-bottom:15px;">🖨️</div>
+        <div style="font-weight:900; margin-bottom:5px;">Impresión DTF Textil</div>
+        <div style="font-size:0.8rem; color:var(--text-muted);">Metro de 58cm ancho</div>
+        <div style="margin-top:12px; color:var(--pink); font-weight:700; font-size:0.85rem;">Desde $8.000/mt →</div>
+      </a>
+      <a href="tienda.html" style="background:white; border-radius:20px; padding:30px; text-align:center; cursor:pointer; transition:all 0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-decoration:none; color:inherit;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:3rem; margin-bottom:15px;">✨</div>
+        <div style="font-weight:900; margin-bottom:5px;">Impresión UV</div>
+        <div style="font-size:0.8rem; color:var(--text-muted);">Alta definición · resistente</div>
+        <div style="margin-top:12px; color:var(--pink); font-weight:700; font-size:0.85rem;">Desde $20.000/mt →</div>
+      </a>
+      <a href="personalizador.html" style="background:var(--dark); border-radius:20px; padding:30px; text-align:center; cursor:pointer; transition:all 0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-decoration:none; color:inherit;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+        <div style="font-size:3rem; margin-bottom:15px;">🎨</div>
+        <div style="font-weight:900; margin-bottom:5px; color:white;">Diseñador Online</div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.55);">Personaliza tu prenda</div>
+        <div style="margin-top:12px; color:var(--pink); font-weight:700; font-size:0.85rem;">¡Empieza gratis →!</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <div style="background:white; padding:80px 5%;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div class="section-title">
+        <span class="eyebrow">Comunidad Bubalu</span>
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"La calidad de las poleras acid wash de Bubalu es insuperable. Mis clientes siempre vuelven por más. ¡El proceso de compra online fue súper fácil!"</p>
+          <span class="review-handle">@urban_vibe_cl</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"He probado varios proveedores de DTF en Chile y ninguno iguala la nitidez y durabilidad de Bubalu. Además, llega super rápido."</p>
+          <span class="review-handle">@creaciones.valpo</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Los polerones oversize son increíbles. Gramaje real y terminaciones perfectas. El diseñador online me permitió ver exactamente cómo quedaría."</p>
+          <span class="review-handle">@taller.textil.sur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ====== DESIGNER ====== -->
+<div class="page" id="page-designer">
+  <div style="background:var(--dark); padding:50px 5%; text-align:center;">
+    <span class="eyebrow" style="color:var(--pink-light);">Studio de Diseño</span>
+    <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3rem; letter-spacing:1px; color:white; margin-bottom:10px;">Diseñador de Prendas</h2>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.9rem;">Personaliza tu prenda y paga online — sin salir de la página</p>
+  </div>
+
+  <div class="section" style="max-width:1300px;">
+
+    <!-- Model selector -->
+    <div style="margin-bottom:25px;">
+      <div style="font-weight:900; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:#888; margin-bottom:12px;">Elige tu modelo:</div>
+      <div class="model-tabs">
+        <div class="model-tab active" onclick="selectModel('basica', 4000, this)">
+          <div class="model-tab-icon">👕</div>
+          <div class="model-tab-name">Polera Básica</div>
+          <div class="model-tab-price">$4.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('oversize', 9000, this)">
+          <div class="model-tab-icon">👕</div>
+          <div class="model-tab-name">Oversize</div>
+          <div class="model-tab-price">$9.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('acidwash', 5000, this)">
+          <div class="model-tab-icon">👕</div>
+          <div class="model-tab-name">Acid Wash</div>
+          <div class="model-tab-price">$5.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('canguro', 9000, this)">
+          <div class="model-tab-icon">🧥</div>
+          <div class="model-tab-name">Canguro</div>
+          <div class="model-tab-price">$9.000</div>
+        </div>
+        <div class="model-tab" onclick="selectModel('polo_sc', 8000, this)">
+          <div class="model-tab-icon">🧥</div>
+          <div class="model-tab-name">Polo s/Capucha</div>
+          <div class="model-tab-price">$8.000</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="designer-layout">
+      <!-- Preview -->
+      <div class="designer-preview">
+        <div id="capture-area" class="canvas-container">
+          <div id="garment-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; transition:background 0.3s; z-index:0;"></div>
+          <div class="garment-display" id="garment-emoji" style="z-index:1; font-size:11rem; pointer-events:none; transition:all 0.3s; filter:drop-shadow(0 10px 30px rgba(0,0,0,0.08));">👕</div>
+          <div class="design-area" id="design-area">
+            <div id="logo-wrap" class="draggable-el" style="top:120px; left:120px; display:none; width:130px;">
+              <img id="logo-preview" style="width:100%; display:block; pointer-events:none; border-radius:4px;">
+              <div class="resizer"></div>
+            </div>
+            <div id="text-wrap" class="draggable-el" style="top:170px; left:80px; display:none;">
+              <span id="text-render" style="font-size:28px; white-space:nowrap; display:block; font-family:'Bebas Neue'; color:#000; letter-spacing:1px;">TU TEXTO</span>
+              <div class="resizer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:15px;">
+          <div class="color-label">Color de la Prenda:</div>
+          <div class="color-grid" id="color-picker"></div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="designer-controls">
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">1</div> Cantidad por talla</div>
+          <div class="qty-sizes">
+            <div class="qty-size-item"><label>S</label><input type="number" class="size-input" data-size="S" value="0" min="0"></div>
+            <div class="qty-size-item"><label>M</label><input type="number" class="size-input" data-size="M" value="1" min="0"></div>
+            <div class="qty-size-item"><label>L</label><input type="number" class="size-input" data-size="L" value="0" min="0"></div>
+            <div class="qty-size-item"><label>XL</label><input type="number" class="size-input" data-size="XL" value="0" min="0"></div>
+          </div>
+        </div>
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">2</div> Tu logo o imagen</div>
+          <input type="file" accept="image/*" onchange="handleLogo(this)" style="margin-bottom:8px;">
+          <div style="font-size:0.72rem; color:var(--text-muted);">PNG con fondo transparente recomendado</div>
+          <div style="margin-top:10px;">
+            <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:6px;">Posición del logo:</div>
+            <div class="design-position-grid">
+              <div class="pos-btn" onclick="moveElement('logo-wrap','50px','50px')">↖ Arriba Izq</div>
+              <div class="pos-btn active" onclick="moveElement('logo-wrap','50px','calc(50% - 65px)')">↑ Arriba Centro</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','50px','calc(100% - 180px)')">↗ Arriba Der</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','180px','50px')">← Centro Izq</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','180px','calc(50% - 65px)')">• Centro</div>
+              <div class="pos-btn" onclick="moveElement('logo-wrap','180px','calc(100% - 180px)')">→ Centro Der</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">3</div> Tu texto personalizado</div>
+          <input type="text" placeholder="Escribe aquí tu texto..." oninput="handleText(this.value)" style="margin-bottom:10px;">
+          <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:8px;">Tipografía:</div>
+          <div class="font-grid">
+            <button class="font-btn" onclick="setFont('Bebas Neue')" style="font-family:'Bebas Neue'; font-size:1rem; letter-spacing:1px;">Bebas</button>
+            <button class="font-btn" onclick="setFont('Pacifico')" style="font-family:'Pacifico'; font-size:0.75rem;">Pacifico</button>
+            <button class="font-btn" onclick="setFont('Anton')" style="font-family:'Anton';">Anton</button>
+            <button class="font-btn" onclick="setFont('Lobster')" style="font-family:'Lobster';">Lobster</button>
+            <button class="font-btn" onclick="setFont('Permanent Marker')" style="font-family:'Permanent Marker'; font-size:0.7rem;">Marker</button>
+            <button class="font-btn" onclick="setFont('Montserrat')" style="font-family:'Montserrat'; font-weight:900; font-size:0.72rem;">Bold</button>
+          </div>
+          <div style="margin-top:10px;">
+            <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:6px;">Tamaño del texto:</div>
+            <div class="ctrl-range-row">
+              <input type="range" min="14" max="80" value="28" oninput="setTextSize(this.value)">
+              <span id="size-label">28px</span>
+            </div>
+          </div>
+          <div style="margin-top:10px;">
+            <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#888; margin-bottom:6px;">Color del texto:</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;" id="text-colors"></div>
+          </div>
+        </div>
+
+        <div class="ctrl-step">
+          <div class="ctrl-label"><div class="ctrl-label-num">4</div> Precio estimado</div>
+          <div class="price-summary">
+            <div class="price-row-s"><span>Prenda base (c/u):</span><span id="d-price-base">$4.000</span></div>
+            <div class="price-row-s"><span>Estampado DTF:</span><span id="d-price-imp">$0</span></div>
+            <div class="price-row-s"><span>Cantidad total:</span><span id="d-qty">1 unid.</span></div>
+            <div class="price-total"><span>TOTAL:</span><span id="d-total">$4.000</span></div>
+          </div>
+        </div>
+
+        <button class="btn-primary btn" style="width:100%; border-radius:12px; font-size:0.9rem;" onclick="openDesignOrder()">
+          ✅ Finalizar y Pagar Online
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CONTACT ====== -->
+<div class="page" id="page-contact">
+  <div style="background:var(--dark); padding:50px 5%; text-align:center;">
+    <span class="eyebrow" style="color:var(--pink-light);">¿Necesitas ayuda?</span>
+    <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3rem; letter-spacing:1px; color:white; margin-bottom:10px;">Contáctanos</h2>
+    <p style="color:rgba(255,255,255,0.55);">Estamos aquí para ayudarte — elige tu canal preferido</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-grid">
+      <div class="contact-card ig-card">
+        <div class="contact-icon">📸</div>
+        <h4>Instagram</h4>
+        <p>Síguenos para ver nuestros últimos diseños y novedades. ¡Etiquétanos en tu compra!</p>
+        <a href="https://instagram.com/bubalu.chile" target="_blank">@bubalu.chile →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p>Chatea directo con nosotros para consultas rápidas, cotizaciones al por mayor o seguimiento de pedidos.</p>
+        <a href="https://wa.me/56997911823">+56 9 9791 1823 →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h4>Correo Electrónico</h4>
+        <p>Para pedidos corporativos, envío de archivos o consultas formales. Respondemos en 24h hábiles.</p>
+        <a href="mailto:contacto@bubalu.cl">contacto@bubalu.cl →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📦</div>
+        <h4>Envíos</h4>
+        <p>Despacho a todo Chile con Starken y Correos de Chile. Retiro disponible en Santiago.</p>
+        <a href="contacto.html">Ver zonas y costos →</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="background:white; border-radius:25px; padding:40px; max-width:600px; margin:0 auto; box-shadow:0 10px 40px rgba(0,0,0,0.08);">
+      <h3 style="font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:1px; margin-bottom:5px;">Escríbenos</h3>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:25px;">Completa el formulario y te respondemos en menos de 24 horas.</p>
+      <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"></div>
+      <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@email.com"></div>
+      <div class="form-group"><label>Asunto</label>
+        <select><option>Cotización mayorista</option><option>Pedido personalizado</option><option>Consulta sobre DTF</option><option>Seguimiento de pedido</option><option>Otro</option></select>
+      </div>
+      <div class="form-group"><label>Mensaje</label><textarea style="width:100%; padding:12px 15px; border:1.5px solid var(--gray2); border-radius:10px; font-family:inherit; font-size:0.9rem; height:100px; resize:vertical;" placeholder="Cuéntanos qué necesitas..."></textarea></div>
+      <button class="btn-primary btn" style="width:100%; border-radius:12px;" onclick="showToast('✅ Mensaje enviado — te contactaremos pronto!')">Enviar Mensaje</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CART SIDEBAR ====== -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart(event)">
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="cart-close" onclick="closeCartBtn()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div id="cart-empty" style="text-align:center; padding:40px; color:var(--text-muted);">
+        <div style="font-size:3rem; margin-bottom:15px;">🛍️</div>
+        <div style="font-weight:700; margin-bottom:8px;">Tu carrito está vacío</div>
+        <div style="font-size:0.85rem;">Agrega productos del catálogo</div>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-delivery-est">🚚 Entrega estimada: 3–5 días hábiles · Envío gratis sobre $30.000</div>
+      <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">$0</span></div>
+      <div class="cart-total-row"><span>Envío:</span><span style="color:var(--green);">Calculado al pagar</span></div>
+      <div class="cart-grand-total"><span>Total:</span><span id="cart-total-price">$0</span></div>
+      <button class="btn-checkout" onclick="openCheckout()">🔒 Pagar Ahora · Shopify</button>
+      <div class="payment-icons">
+        <div class="pay-icon">💳 Visa</div>
+        <div class="pay-icon">💳 Mastercard</div>
+        <div class="pay-icon">🏦 Webpay</div>
+        <div class="pay-icon">📱 Flow</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CHECKOUT MODAL ====== -->
+<div class="modal-overlay" id="checkout-modal">
+  <div class="modal-box" id="checkout-box">
+    <div id="checkout-form-view">
+      <h3>Finalizar Compra</h3>
+      <p class="subtitle">Completa tus datos — pago 100% seguro vía Shopify</p>
+
+      <div class="delivery-info">
+        <div class="delivery-icon">🚚</div>
+        <div class="delivery-text">
+          <strong>Llega en 3–5 días hábiles</strong>
+          <span>Despacho con Starken · Seguimiento en línea</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group"><label>Nombre</label><input type="text" id="co-fname" placeholder="Ej: María"></div>
+        <div class="form-group"><label>Apellido</label><input type="text" id="co-lname" placeholder="Ej: González"></div>
+      </div>
+      <div class="form-group"><label>Correo electrónico</label><input type="email" id="co-email" placeholder="tu@email.com"></div>
+      <div class="form-group"><label>Teléfono</label><input type="text" id="co-phone" placeholder="+56 9 XXXX XXXX"></div>
+      <div class="form-group"><label>Dirección de entrega</label><input type="text" placeholder="Calle, número, depto."></div>
+      <div class="form-row">
+        <div class="form-group"><label>Ciudad</label><input type="text" placeholder="Santiago"></div>
+        <div class="form-group"><label>Región</label><select><option>Metropolitana</option><option>Valparaíso</option><option>Biobío</option><option>Araucanía</option><option>Otra</option></select></div>
+      </div>
+
+      <div class="form-group"><label>Método de pago</label>
+        <select>
+          <option>💳 Tarjeta de crédito / débito</option>
+          <option>🏦 Transferencia Webpay Plus</option>
+          <option>📱 Flow (Débito directo)</option>
+        </select>
+      </div>
+
+      <div class="order-summary">
+        <h4>Resumen del pedido</h4>
+        <div id="co-summary-items"></div>
+        <div class="summary-row"><span>Envío:</span><span style="color:var(--green);">Gratis</span></div>
+        <div class="summary-total"><span>Total a pagar:</span><span id="co-total">$0</span></div>
+      </div>
+
+      <div class="modal-btns">
+        <button class="btn-confirm" onclick="confirmOrder()">🔒 Confirmar y Pagar</button>
+        <button class="btn-cancel-modal" onclick="closeModal('checkout-modal')">Cancelar</button>
+      </div>
+    </div>
+
+    <div id="checkout-success-view" style="display:none;">
+      <div class="success-screen">
+        <div class="success-icon">🎉</div>
+        <h3>¡Pedido Confirmado!</h3>
+        <p>Tu pedido ha sido recibido por Bubalu. Recibirás un correo de confirmación con los detalles y el número de seguimiento.</p>
+        <div class="tracking-box">
+          <div style="font-weight:900; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:15px;">Estado de tu pedido:</div>
+          <div class="tracking-step"><div class="tracking-dot done"></div><span style="font-weight:700; color:var(--green);">✓ Pago confirmado</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot done"></div><span style="font-weight:700; color:var(--green);">✓ Pedido recibido por Bubalu</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot pending"></div><span style="color:var(--text-muted);">En producción... (1–2 días)</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot pending"></div><span style="color:var(--text-muted);">En camino con Starken</span></div>
+          <div class="tracking-line"></div>
+          <div class="tracking-step"><div class="tracking-dot pending"></div><span style="color:var(--text-muted);">Entrega estimada: en 3–5 días hábiles</span></div>
+        </div>
+        <div style="background:var(--pink-light); border-radius:12px; padding:15px; margin-bottom:20px; font-size:0.85rem;">
+          <strong>Número de pedido: #BU-20240<span id="order-num"></span></strong><br>
+          <span style="color:var(--text-muted);">Enviado a tu correo electrónico</span>
+        </div>
+        <button class="btn-primary btn" style="border-radius:12px;" onclick="closeModal('checkout-modal'); clearCart();">Ver más productos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">BUBALU</div>
+      <p class="footer-desc">Líderes en impresión DTF textil y UV para emprendedores de Chile. Insumos premium, diseño online y entrega rápida.</p>
+      <div class="social-icons">
+        <a class="social-btn" href="https://instagram.com/bubalu.chile" target="_blank" title="Instagram">📸</a>
+        <a class="social-btn" href="https://wa.me/56997911823" target="_blank" title="WhatsApp">💬</a>
+        <a class="social-btn" href="mailto:contacto@bubalu.cl" title="Email">✉️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Productos</h5>
+      <a href="tienda.html">Poleras Básicas</a>
+      <a href="tienda.html">Poleras Oversize</a>
+      <a href="tienda.html">Acid Wash</a>
+      <a href="tienda.html">Polerones Canguro</a>
+      <a href="tienda.html">Impresión DTF</a>
+    </div>
+    <div class="footer-col">
+      <h5>Servicio</h5>
+      <a href="personalizador.html">Diseñador Online</a>
+      <a href="contacto.html">Envíos a Chile</a>
+      <a href="contacto.html">Preguntas Frecuentes</a>
+      <a href="contacto.html">Política de Cambios</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <a href="https://instagram.com/bubalu.chile" target="_blank">Instagram: @bubalu.chile</a>
+      <a href="mailto:contacto@bubalu.cl">contacto@bubalu.cl</a>
+      <a href="https://wa.me/56997911823">WhatsApp: +56 9 9791 1823</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Bubalu Chile · Todos los derechos reservados · Pago seguro con Shopify</div>
+    <div class="footer-watermark">
+      🎨 DEMO — Así se vería tu sitio web<br>
+      <span class="powered-by">Mockup creado por Ana Freitez</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp floating -->
+<a href="https://wa.me/56997911823?text=Hola%20Bubalu,%20vengo%20de%20la%20web" class="wa-float" target="_blank" title="Escríbenos por WhatsApp">💬</a>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== STATE =====
+let cart = [];
+let designerBasePrice = 4000;
+let designerModel = 'basica';
+let selectedColorName = 'Blanco';
+
+const garmentColors = [
+  {id:'blanco', hex:'#ffffff', n:'Blanco'},
+  {id:'negro', hex:'#1a1a1a', n:'Negro'},
+  {id:'rojo', hex:'#d32f2f', n:'Rojo'},
+  {id:'azul', hex:'#1a237e', n:'Azul'},
+  {id:'amarillo', hex:'#f9c23c', n:'Amarillo'},
+  {id:'verde', hex:'#2e7d32', n:'Verde'},
+  {id:'burdeo', hex:'#800020', n:'Burdeo'},
+  {id:'gris', hex:'#888888', n:'Gris'},
+];
+
+const textColors = [
+  '#000000','#ffffff','#d32f2f','#1a237e','#f9c23c','#e21b79','#2e7d32','#ff6f00'
+];
+
+// ===== PAGE NAVIGATION =====
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  const pnav = document.getElementById('page-nav');
+  pnav.style.display = page === 'home' ? 'none' : 'flex';
+  document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+  if (page !== 'home') {
+    const tab = document.getElementById('tab-' + page);
+    if (tab) tab.classList.add('active');
+  }
+  window.scrollTo(0, 0);
+}
+
+// ===== CATALOG FILTER =====
+function filterCatalog(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+// ===== CART =====
+function openCart() {
+  document.getElementById('cart-overlay').classList.add('open');
+}
+function closeCart(e) {
+  if (e.target === document.getElementById('cart-overlay')) {
+    document.getElementById('cart-overlay').classList.remove('open');
+  }
+}
+function closeCartBtn() {
+  document.getElementById('cart-overlay').classList.remove('open');
+}
+
+function addToCart(name, price, emoji) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, price, emoji, qty: 1 });
+  }
+  updateCart();
+  openCart();
+  showToast('✅ ' + name + ' agregado al carrito');
+}
+
+function updateCart() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('cart-count').textContent = count;
+
+  const itemsEl = document.getElementById('cart-items');
+  const emptyEl = document.getElementById('cart-empty');
+
+  if (cart.length === 0) {
+    emptyEl.style.display = '';
+    const existing = itemsEl.querySelectorAll('.cart-item');
+    existing.forEach(e => e.remove());
+  } else {
+    emptyEl.style.display = 'none';
+    itemsEl.querySelectorAll('.cart-item').forEach(e => e.remove());
+    cart.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <div class="cart-item-img">${item.emoji}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-detail">Talla: L · Color: Blanco</div>
+          <div class="cart-item-price">$${(item.price * item.qty).toLocaleString('es-CL')}</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+            <span style="font-weight:700; font-size:0.9rem;">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+            <button class="qty-btn" onclick="removeItem(${idx})" style="margin-left:5px; font-size:0.75rem;">✕</button>
+          </div>
+        </div>
+      `;
+      itemsEl.appendChild(div);
+    });
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  document.getElementById('cart-subtotal').textContent = '$' + total.toLocaleString('es-CL');
+  document.getElementById('cart-total-price').textContent = '$' + total.toLocaleString('es-CL');
+}
+
+function changeQty(idx, delta) {
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  updateCart();
+}
+
+function removeItem(idx) {
+  cart.splice(idx, 1);
+  updateCart();
+}
+
+function clearCart() {
+  cart = [];
+  updateCart();
+}
+
+// ===== CHECKOUT =====
+function openCheckout() {
+  closeCartBtn();
+  document.getElementById('checkout-form-view').style.display = '';
+  document.getElementById('checkout-success-view').style.display = 'none';
+
+  const summaryEl = document.getElementById('co-summary-items');
+  summaryEl.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'summary-row';
+    div.innerHTML = `<span>${item.emoji} ${item.name} ×${item.qty}</span><span>$${(item.price * item.qty).toLocaleString('es-CL')}</span>`;
+    summaryEl.appendChild(div);
+    total += item.price * item.qty;
+  });
+  document.getElementById('co-total').textContent = '$' + total.toLocaleString('es-CL');
+  document.getElementById('checkout-modal').classList.add('open');
+}
+
+function openDesignOrder() {
+  // Build cart item from designer
+  let qty = 0;
+  document.querySelectorAll('.size-input').forEach(i => qty += parseInt(i.value) || 0);
+  if (qty === 0) { showToast('⚠️ Agrega al menos 1 prenda'); return; }
+  const hasDesign = document.getElementById('logo-wrap').style.display !== 'none' || document.getElementById('text-wrap').style.display !== 'none';
+  const imp = hasDesign ? 3500 : 0;
+  const total = (designerBasePrice + imp) * qty;
+
+  cart = [{ name: 'Polera personalizada (' + designerModel + ')', price: designerBasePrice + imp, emoji: '🎨', qty }];
+  updateCart();
+
+  document.getElementById('checkout-form-view').style.display = '';
+  document.getElementById('checkout-success-view').style.display = 'none';
+
+  const summaryEl = document.getElementById('co-summary-items');
+  summaryEl.innerHTML = '';
+  const div = document.createElement('div');
+  div.className = 'summary-row';
+  div.innerHTML = `<span>🎨 Prenda personalizada ×${qty}</span><span>$${total.toLocaleString('es-CL')}</span>`;
+  summaryEl.appendChild(div);
+  if (hasDesign) {
+    const div2 = document.createElement('div');
+    div2.className = 'summary-row';
+    div2.innerHTML = `<span style="color:var(--text-muted); font-size:0.8rem;">  ↳ Incluye estampado DTF</span><span style="font-size:0.8rem;">$${(imp*qty).toLocaleString('es-CL')}</span>`;
+    summaryEl.appendChild(div2);
+  }
+  document.getElementById('co-total').textContent = '$' + total.toLocaleString('es-CL');
+  document.getElementById('checkout-modal').classList.add('open');
+}
+
+function confirmOrder() {
+  const name = document.getElementById('co-fname').value;
+  const email = document.getElementById('co-email').value;
+  if (!name || !email) { showToast('⚠️ Completa tu nombre y correo para continuar'); return; }
+  document.getElementById('checkout-form-view').style.display = 'none';
+  document.getElementById('checkout-success-view').style.display = '';
+  document.getElementById('order-num').textContent = Math.floor(Math.random() * 9000 + 1000);
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+// ===== DESIGNER =====
+function selectModel(model, price, btn) {
+  designerModel = model;
+  designerBasePrice = price;
+  document.querySelectorAll('.model-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const emojiMap = { basica:'👕', oversize:'👕', acidwash:'👕', canguro:'🧥', polo_sc:'🧥' };
+  document.getElementById('garment-emoji').textContent = emojiMap[model] || '👕';
+  updateDesignCalc();
+}
+
+function initColorPicker() {
+  const cp = document.getElementById('color-picker');
+  cp.innerHTML = '';
+  garmentColors.forEach((c, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'color-dot' + (i === 0 ? ' active' : '');
+    dot.style.background = c.hex;
+    if (c.id === 'blanco') dot.style.border = '3px solid #ddd';
+    const tt = document.createElement('div');
+    tt.className = 'dot-tooltip';
+    tt.textContent = c.n;
+    dot.appendChild(tt);
+    dot.onclick = () => {
+      selectedColorName = c.n;
+      document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+      document.getElementById('garment-bg').style.background = 'none';
+      const emoji = document.getElementById('garment-emoji');
+      const filterMap = {
+        negro: 'brightness(0)',
+        rojo: 'sepia(1) saturate(5) hue-rotate(320deg)',
+        azul: 'sepia(1) saturate(3) hue-rotate(200deg)',
+        amarillo: 'sepia(1) saturate(5) hue-rotate(20deg)',
+        verde: 'sepia(1) saturate(3) hue-rotate(90deg)',
+        burdeo: 'sepia(1) saturate(4) hue-rotate(295deg)',
+        gris: 'grayscale(1) brightness(0.7)',
+        blanco: 'none',
+      };
+      emoji.style.filter = filterMap[c.id] || 'none';
+      updateDesignCalc();
+    };
+    cp.appendChild(dot);
+  });
+}
+
+function initTextColors() {
+  const el = document.getElementById('text-colors');
+  el.innerHTML = '';
+  textColors.forEach(hex => {
+    const dot = document.createElement('div');
+    dot.style.cssText = `width:28px; height:28px; border-radius:50%; background:${hex}; cursor:pointer; border:3px solid transparent; box-shadow:0 0 0 1px rgba(0,0,0,0.12); transition:all 0.15s; flex-shrink:0;`;
+    if (hex === '#ffffff') dot.style.boxShadow = '0 0 0 1.5px #ccc';
+    dot.onclick = () => {
+      document.getElementById('text-render').style.color = hex;
+      el.querySelectorAll('div').forEach(d => d.style.borderColor = 'transparent');
+      dot.style.borderColor = '#e21b79';
+    };
+    el.appendChild(dot);
+  });
+}
+
+function handleLogo(input) {
+  if (input.files && input.files[0]) {
+    const r = new FileReader();
+    r.onload = e => {
+      document.getElementById('logo-preview').src = e.target.result;
+      document.getElementById('logo-wrap').style.display = 'block';
+      updateDesignCalc();
+    };
+    r.readAsDataURL(input.files[0]);
+  }
+}
+
+function handleText(v) {
+  document.getElementById('text-render').textContent = v || 'TU TEXTO';
+  document.getElementById('text-wrap').style.display = v ? 'block' : 'none';
+  updateDesignCalc();
+}
+
+function setFont(f) {
+  document.getElementById('text-render').style.fontFamily = f;
+}
+
+function setTextSize(v) {
+  document.getElementById('text-render').style.fontSize = v + 'px';
+  document.getElementById('size-label').textContent = v + 'px';
+}
+
+function moveElement(id, top, left) {
+  const el = document.getElementById(id);
+  el.style.top = top;
+  el.style.left = left;
+}
+
+function updateDesignCalc() {
+  let qty = 0;
+  document.querySelectorAll('.size-input').forEach(i => qty += parseInt(i.value) || 0);
+  const hasDesign = document.getElementById('logo-wrap').style.display !== 'none' || document.getElementById('text-wrap').style.display !== 'none';
+  const imp = hasDesign ? 3500 : 0;
+  document.getElementById('d-price-base').textContent = '$' + designerBasePrice.toLocaleString('es-CL');
+  document.getElementById('d-price-imp').textContent = imp > 0 ? '$' + imp.toLocaleString('es-CL') : '$0';
+  document.getElementById('d-qty').textContent = qty + ' unid.';
+  document.getElementById('d-total').textContent = '$' + ((designerBasePrice + imp) * qty).toLocaleString('es-CL');
+}
+
+function makeDraggable(el) {
+  let isDrag = false, isResize = false, sx, sy, sw, sl, st;
+  const resizer = el.querySelector('.resizer');
+  const onStart = e => {
+    const c = e.touches ? e.touches[0] : e;
+    if (e.target === resizer) isResize = true; else isDrag = true;
+    sx = c.clientX; sy = c.clientY;
+    sw = el.offsetWidth; sl = el.offsetLeft; st = el.offsetTop;
+    e.preventDefault();
+  };
+  const onMove = e => {
+    if (!isDrag && !isResize) return;
+    const c = e.touches ? e.touches[0] : e;
+    if (isDrag) { el.style.left = (sl + c.clientX - sx) + 'px'; el.style.top = (st + c.clientY - sy) + 'px'; }
+    if (isResize) { const nw = sw + c.clientX - sx; if (nw > 40) el.style.width = nw + 'px'; }
+    updateDesignCalc();
+  };
+  const onEnd = () => isDrag = isResize = false;
+  el.addEventListener('mousedown', onStart);
+  el.addEventListener('touchstart', onStart, { passive: false });
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('mouseup', onEnd);
+  document.addEventListener('touchend', onEnd);
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  initColorPicker();
+  initTextColors();
+  makeDraggable(document.getElementById('logo-wrap'));
+  makeDraggable(document.getElementById('text-wrap'));
+  document.querySelectorAll('.size-input').forEach(i => i.addEventListener('input', updateDesignCalc));
+  updateDesignCalc();
+  updateCart();
+});
+</script>
+</body>
+</html>

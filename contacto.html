@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | Contacto</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="cart-sidebar.html" class="cart-btn">🛒 Carrito <span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<!-- ====== CONTACT ====== -->
+<div class="page active" id="page-contact">
+  <div style="background:var(--dark); padding:50px 5%; text-align:center;">
+    <span class="eyebrow" style="color:var(--pink-light);">¿Necesitas ayuda?</span>
+    <h2 style="font-family:'Bebas Neue',sans-serif; font-size:3rem; letter-spacing:1px; color:white; margin-bottom:10px;">Contáctanos</h2>
+    <p style="color:rgba(255,255,255,0.55);">Estamos aquí para ayudarte — elige tu canal preferido</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-grid">
+      <div class="contact-card ig-card">
+        <div class="contact-icon">📸</div>
+        <h4>Instagram</h4>
+        <p>Síguenos para ver nuestros últimos diseños y novedades. ¡Etiquétanos en tu compra!</p>
+        <a href="https://instagram.com/bubalu.chile" target="_blank">@bubalu.chile →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p>Chatea directo con nosotros para consultas rápidas, cotizaciones al por mayor o seguimiento de pedidos.</p>
+        <a href="https://wa.me/56997911823">+56 9 9791 1823 →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h4>Correo Electrónico</h4>
+        <p>Para pedidos corporativos, envío de archivos o consultas formales. Respondemos en 24h hábiles.</p>
+        <a href="mailto:contacto@bubalu.cl">contacto@bubalu.cl →</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📦</div>
+        <h4>Envíos</h4>
+        <p>Despacho a todo Chile con Starken y Correos de Chile. Retiro disponible en Santiago.</p>
+        <a href="index.html">Ver zonas y costos →</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="background:white; border-radius:25px; padding:40px; max-width:600px; margin:0 auto; box-shadow:0 10px 40px rgba(0,0,0,0.08);">
+      <h3 style="font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:1px; margin-bottom:5px;">Escríbenos</h3>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:25px;">Completa el formulario y te respondemos en menos de 24 horas.</p>
+      <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"></div>
+      <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="tu@email.com"></div>
+      <div class="form-group"><label>Asunto</label>
+        <select><option>Cotización mayorista</option><option>Pedido personalizado</option><option>Consulta sobre DTF</option><option>Seguimiento de pedido</option><option>Otro</option></select>
+      </div>
+      <div class="form-group"><label>Mensaje</label><textarea style="width:100%; padding:12px 15px; border:1.5px solid var(--gray2); border-radius:10px; font-family:inherit; font-size:0.9rem; height:100px; resize:vertical;" placeholder="Cuéntanos qué necesitas..."></textarea></div>
+      <button class="btn-primary btn" style="width:100%; border-radius:12px;" onclick="showToast('✅ Mensaje enviado — te contactaremos pronto!')">Enviar Mensaje</button>
+    </div>
+  </div>
+</div>
+<script src="funciones.js"></script>
+</body>
+</html>

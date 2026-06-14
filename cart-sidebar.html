@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubalu | Carrito</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Roboto:wght@400;700;900&family=Permanent+Marker&family=Anton&family=Lobster&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="img/bubalu.png" alt="Bubalu" style="width:50px;height:30px;"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Catálogo</a>
+    <a href="personalizador.html">Diseñar</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="cart-sidebar.html" class="cart-btn">🛒 Carrito <span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<div class="section" style="max-width:900px;">
+  <div class="section-title">
+    <span class="eyebrow">Tu Compra</span>
+    <h2>Carrito y resumen del pedido</h2>
+  </div>
+  <div style="background:white; border-radius:20px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.06); margin-bottom:25px;">
+    <a class="btn btn-primary" href="tienda.html" style="margin-right:10px;">Seguir comprando</a>
+    <a class="btn btn-outline" href="checkout.html" style="color:var(--dark); border-color:var(--gray2);">Ir a checkout</a>
+  </div>
+</div>
+
+<!-- ====== CART SIDEBAR ====== -->
+<div class="cart-overlay open" id="cart-overlay" onclick="closeCart(event)">
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="cart-close" onclick="closeCartBtn()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div id="cart-empty" style="text-align:center; padding:40px; color:var(--text-muted);">
+        <div style="font-size:3rem; margin-bottom:15px;">🛍️</div>
+        <div style="font-weight:700; margin-bottom:8px;">Tu carrito está vacío</div>
+        <div style="font-size:0.85rem;">Agrega productos del catálogo</div>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-delivery-est">🚚 Entrega estimada: 3–5 días hábiles · Envío gratis sobre $30.000</div>
+      <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">$0</span></div>
+      <div class="cart-total-row"><span>Envío:</span><span style="color:var(--green);">Calculado al pagar</span></div>
+      <div class="cart-grand-total"><span>Total:</span><span id="cart-total-price">$0</span></div>
+      <button class="btn-checkout" onclick="openCheckout()">🔒 Pagar Ahora · Shopify</button>
+      <div class="payment-icons">
+        <div class="pay-icon">💳 Visa</div>
+        <div class="pay-icon">💳 Mastercard</div>
+        <div class="pay-icon">🏦 Webpay</div>
+        <div class="pay-icon">📱 Flow</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="funciones.js"></script>
+</body>
+</html>
